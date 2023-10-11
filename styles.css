@@ -1,0 +1,18 @@
+h1 {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 5rem;
+}
+
+#bookLogs {
+    background-color: blueviolet;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+}
+
+.bookDisplay {
+    background-color: aqua;
+    width: 200px;
+    height: auto;
+    margin: 20px;
+}
