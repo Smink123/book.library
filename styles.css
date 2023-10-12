@@ -3,9 +3,10 @@
 }
 
 h1 {
-    font-family: 'Courier New', Courier, monospace;
-    font-size: 5rem;
+    font-family: 'Young Serif', serif;
+    font-size:  20rem;
     text-align: center;
+    margin: 0;
 }
 
 body {
@@ -14,6 +15,23 @@ body {
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    font-family: 'Onest', sans-serif;
+    font-size: 1.rem;
+    background-color: #eae5d9;
+}
+
+#form {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+}
+
+#submitContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
 }
 
 #inputContainer {
@@ -21,50 +39,94 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: red;
-    width: 95vw;
+    width: auto;
+    margin-bottom: 20px;
+    padding-right: 30px;
 }
 
 input {
     width: 300px;
+    border: none; 
+    outline: none;
+    background: transparent; /* Remove the default background */
+    padding: 0;
+    margin: 0;
+    font-family: inherit; /* Inherit the font family from the parent element */
+    font-size: inherit; /* Inherit the font size from the parent element */
+    color: inherit;
+    border-bottom: 1px solid black;
 }
 
+
 .labelContainer {
-    width: 100px;
+    width: 140px;
     text-align: right;
+    margin-right: 30px;
 }
 
 .optionBox {
     display: flex;
     flex-direction: row;
+    margin-top: 20px;
 }
 
 #bookLogs {
-    background-color: yellowgreen;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     width: 95vw;
     height: auto;
+    margin-bottom: 20px;
 }
 
 .bookDisplay {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: red;
+    background-color: #f25130;
     width: 100%;
     height: auto;
-    flex-direction: column;
+    flex-direction: row;
     margin-bottom: 20px;
+    padding: 20px;
 }
 
 .remove {
-    background-color: yellow;
+    width: 200px;
 }
 
 .statusButtons {
     background-color: white;
     color: black;
+    width: 100px;
+}
+
+.userTitle {
+    font-family: 'Young Serif', serif;
+    font-size: 2rem;
+    margin: 0
+}
+
+.bookInfoSide {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    text-align: right;
+    padding-right: 20px;
+}
+
+.buttonSide {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    padding-left: 20px;
+}
+
+.userExtraInfo {
+    margin: 0;
+}
+
+#totalBooks {
+    background-color: #f25130;
 }

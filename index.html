@@ -3,39 +3,49 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Book Library</title>
+    <title>My Library</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Young+Serif&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Onest:wght@300&display=swap" rel="stylesheet">
 </head>
 <body>
-    <h1>Book Library</h1>
-    <div id="inputContainer">
-        <div class = 'optionBox'>
-            <div class="labelContainer">
-                <label for="bookTitle">Book Title:</label>
+    <h1>Library</h1>
+    <div id="form">
+        <div id="inputContainer">
+            <div class = 'optionBox'>
+                <div class="labelContainer">
+                    <label for="bookTitle">BOOK TITLE: </label>
+                </div>
+                <input type="text" id="bookTitle" name="bookTitle">
             </div>
-            <input type="text" id="bookTitle" name="bookTitle">
+            <div class = 'optionBox'>
+                <div class="labelContainer">
+                    <label for="bookAuthor">BOOK AUTHOR: </label>
+                </div>
+                <input type="text" id="bookAuthor" name="bookAuthor">
+            </div>
+            <div class = 'optionBox'>
+                <div class="labelContainer">
+                    <label for="bookPages">TOTAL PAGES: </label>
+                </div>
+                <input type="text" id="bookPages" name="bookPages">
+            </div>
+            <div class = 'optionBox'>
+                <div class="labelContainer">
+                    <label for="bookYear">PUBLISH YEAR: </label>
+                </div>
+                <input type="text" id="bookYear" name="bookYear">
+            </div>
         </div>
-        <div class = 'optionBox'>
-            <div class="labelContainer">
-                <label for="bookAuthor">Book Author:</label>
-            </div>
-            <input type="text" id="bookAuthor" name="bookAuthor">
-        </div>
-        <div class = 'optionBox'>
-            <div class="labelContainer">
-                <label for="bookPages">Book Pages:</label>
-            </div>
-            <input type="text" id="bookPages" name="bookPages">
-        </div>
-        <div class = 'optionBox'>
-            <div class="labelContainer">
-                <label for="bookYear">Book Year:</label>
-            </div>
-            <input type="text" id="bookYear" name="bookYear">
+        <div id="submitContainer">
+            <button id="submitBook">SUBMIT</button>
         </div>
     </div>
     <br>
-    <button id="submitBook">SUBMIT</button>
     <p id="totalBooks"></p>
     <div id="bookLogs">
 

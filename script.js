@@ -42,19 +42,34 @@ function displayBooks() {
       const userInfoBox = document.createElement("div");
       userInfoBox.classList.add("bookDisplay");
       bookLogs.appendChild(userInfoBox);
+
+      const bookInfoSide = document.createElement("div");
+      bookInfoSide.classList.add('bookInfoSide');
+      userInfoBox.appendChild(bookInfoSide)
   
-      const userTitleAndAuthor = document.createElement("p");
-      userTitleAndAuthor.textContent = `${book.bookTitle} by ${book.author}`;
-      userInfoBox.appendChild(userTitleAndAuthor);
+      const userTitle = document.createElement("p");
+      userTitle.textContent = `${book.bookTitle}`;
+      userTitle.classList.add('userTitle');
+      bookInfoSide.appendChild(userTitle);
+
+      const userAuthorAndYear = document.createElement("p")
+      userAuthorAndYear.textContent = `${book.author}, ${book.yearPublished}`;
+      userAuthorAndYear.classList.add('userExtraInfo')
+      bookInfoSide.appendChild(userAuthorAndYear);
   
-      const userPagesAndYear = document.createElement("p");
-      userPagesAndYear.textContent = `${book.totalPages} pages, ${book.yearPublished}`;
-      userInfoBox.appendChild(userPagesAndYear);
+      const userPages = document.createElement("p");
+      userPages.textContent = `${book.totalPages} pages`;
+      userPages.classList.add('userExtraInfo')
+      bookInfoSide.appendChild(userPages);
+
+      const buttonSide = document.createElement("div");
+      buttonSide.classList.add('buttonSide');
+      userInfoBox.appendChild(buttonSide)
   
       const removeButton = document.createElement("button");
       removeButton.textContent = 'REMOVE';
       removeButton.classList.add('remove');
-      userInfoBox.appendChild(removeButton);
+      buttonSide.appendChild(removeButton);
   
       removeButton.addEventListener('click', function() {
         myLibrary.splice(i, 1);
@@ -63,7 +78,7 @@ function displayBooks() {
   
       const statusBox = document.createElement("div");
       statusBox.classList.add('statusBox');
-      userInfoBox.appendChild(statusBox);
+      buttonSide.appendChild(statusBox);
   
       const haveRead = document.createElement("button");
       haveRead.classList.add('statusButtons');
@@ -96,14 +111,14 @@ function displayBooks() {
       });
   
       notRead.addEventListener('click', function() {
-        book.notRead = true; //change the state to
+        book.notRead = true;
         notRead.style.backgroundColor = 'black';
         notRead.style.color = 'white';
         haveRead.style.backgroundColor = 'white';
         haveRead.style.color = 'black';
       });
     });
-    totalBooks.textContent = `Total Books: ${myLibrary.length}`;
+    totalBooks.textContent = `TOTAL BOOKS: ${myLibrary.length}`;
   }
   
 
