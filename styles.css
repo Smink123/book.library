@@ -1,22 +1,70 @@
+* {
+    box-sizing: border-box;
+}
+
 h1 {
     font-family: 'Courier New', Courier, monospace;
     font-size: 5rem;
+    text-align: center;
+}
+
+body {
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+#inputContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: red;
+    width: 95vw;
+}
+
+input {
+    width: 300px;
+}
+
+.labelContainer {
+    width: 100px;
+    text-align: right;
+}
+
+.optionBox {
+    display: flex;
+    flex-direction: row;
 }
 
 #bookLogs {
     background-color: yellowgreen;
     display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 95vw;
+    height: auto;
 }
 
 .bookDisplay {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     background-color: red;
-    width: 200px;
+    width: 100%;
     height: auto;
-    margin: 20px;
+    flex-direction: column;
+    margin-bottom: 20px;
 }
 
 .remove {
     background-color: yellow;
+}
+
+.statusButtons {
+    background-color: white;
+    color: black;
 }

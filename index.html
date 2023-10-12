@@ -8,25 +8,35 @@
 </head>
 <body>
     <h1>Book Library</h1>
-    <div>
-        <label for="bookTitle">Book Title:</label>
-        <input type="text" id="bookTitle" name="bookTitle">
-    </div>
-    <div>
-        <label for="bookAuthor">Book Author:</label>
-        <input type="text" id="bookAuthor" name="bookAuthor">
-    </div>
-    <div>
-        <label for="bookPages">Book Pages:</label>
-        <input type="text" id="bookPages" name="bookPages">
-    </div>
-    <div>
-        <label for="bookYear">Book Year:</label>
-        <input type="text" id="bookYear" name="bookYear">
+    <div id="inputContainer">
+        <div class = 'optionBox'>
+            <div class="labelContainer">
+                <label for="bookTitle">Book Title:</label>
+            </div>
+            <input type="text" id="bookTitle" name="bookTitle">
+        </div>
+        <div class = 'optionBox'>
+            <div class="labelContainer">
+                <label for="bookAuthor">Book Author:</label>
+            </div>
+            <input type="text" id="bookAuthor" name="bookAuthor">
+        </div>
+        <div class = 'optionBox'>
+            <div class="labelContainer">
+                <label for="bookPages">Book Pages:</label>
+            </div>
+            <input type="text" id="bookPages" name="bookPages">
+        </div>
+        <div class = 'optionBox'>
+            <div class="labelContainer">
+                <label for="bookYear">Book Year:</label>
+            </div>
+            <input type="text" id="bookYear" name="bookYear">
+        </div>
     </div>
     <br>
     <button id="submitBook">SUBMIT</button>
-    <p id="totalBooks">Total Books: 0</p>
+    <p id="totalBooks"></p>
     <div id="bookLogs">
 
     </div>
