@@ -4,15 +4,19 @@ h1 {
 }
 
 #bookLogs {
-    background-color: blueviolet;
+    background-color: yellowgreen;
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
 }
 
 .bookDisplay {
-    background-color: aqua;
+    background-color: red;
     width: 200px;
     height: auto;
     margin: 20px;
+}
+
+.remove {
+    background-color: yellow;
 }
