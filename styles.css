@@ -7,6 +7,7 @@ h1 {
     font-size:  20rem;
     text-align: center;
     margin: 0;
+    color: #2e2e2e;
 }
 
 body {
@@ -32,6 +33,13 @@ body {
     justify-content: center;
     align-items: center;
 
+}
+
+#submitBook {
+    padding: 0;
+    border: none;
+    background: none;
+    font: inherit;
 }
 
 #inputContainer {
@@ -90,6 +98,7 @@ input {
     flex-direction: row;
     margin-bottom: 20px;
     padding: 20px;
+    border-radius: 20px;
 }
 
 .remove {
@@ -105,7 +114,8 @@ input {
 .userTitle {
     font-family: 'Young Serif', serif;
     font-size: 2rem;
-    margin: 0
+    margin: 0;
+    color: #2e2e2e;
 }
 
 .bookInfoSide {
@@ -124,9 +134,12 @@ input {
 }
 
 .userExtraInfo {
-    margin: 0;
+    margin: 3px;
 }
 
 #totalBooks {
-    background-color: #f25130;
+}
+
+#totalBooksContainer {
+    width: 95vw;
 }

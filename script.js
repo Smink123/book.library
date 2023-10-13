@@ -17,6 +17,7 @@ function Book(bookTitle, author, totalPages, yearPublished, notRead) {
   }
 
 submitBook.disabled = true;
+submitBook.style.cursor = 'not-allowed';
 
 function validForms() {
     if (
@@ -25,7 +26,8 @@ function validForms() {
       numberOfPages.value !== "" &&
       publishYear.value !== ""
     ) {
-      return (submitBook.disabled = false);
+      submitBook.disabled = false;
+      submitBook.style.cursor = 'pointer'
     }
   }
 
@@ -138,4 +140,5 @@ submitBook.addEventListener("click", function () {
   numberOfPages.value = "";
   publishYear.value = "";
   submitBook.disabled = true;
+  submitBook.style.cursor = 'not-allowed';
 });
