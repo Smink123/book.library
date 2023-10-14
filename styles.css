@@ -17,7 +17,7 @@ body {
     align-items: center;
     flex-direction: column;
     font-family: 'Onest', sans-serif;
-    font-size: 1.rem;
+    font-size: 1rem;
     background-color: #eae5d9;
 }
 
@@ -31,13 +31,40 @@ body {
 
 .warningDiv {
     position: absolute;
-    right: 400px;
+    width: 600px;
+    height: 200px;
+    display: none;
+    border-radius: 10px;
+    z-index: 1;
+    justify-content: center;
+    align-items: center;
+    padding: 100px;
+    background-color: #eae5d9;
 }
+
+.formWarning {
+    text-align: center;
+}
+
+.form-line {
+    display: block;
+  }
+
+  .form-line:first-child {
+    font-weight: 800;
+    font-size: 1.5rem;
+    margin-bottom: 20px; 
+  }
+
+  .form-line:last-child {
+    margin-top: 8px; 
+  }
 
 #submitContainer {
     display: flex;
     justify-content: center;
     align-items: center;
+    z-index: 5;
 
 }
 
@@ -141,9 +168,6 @@ input {
 
 .userExtraInfo {
     margin: 3px;
-}
-
-#totalBooks {
 }
 
 #totalBooksContainer {

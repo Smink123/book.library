@@ -21,12 +21,14 @@ submitBook.disabled = true;
 submitBook.style.cursor = 'not-allowed';
 
 const yearegEx = /^\d{4}$/;
+const pagesRegEx = /^\d$/
 
 function validForms() {
   if (
     titleOfBook.value !== "" &&
     authorOfBook.value !== "" &&
     numberOfPages.value !== "" &&
+    pagesRegEx.test(numberOfPages.value) &&
     publishYear.value !== "" &&
     yearegEx.test(publishYear.value)
   ) {
@@ -47,12 +49,17 @@ submitBook.addEventListener('mouseenter', function() {
   if (submitBook.disabled) {
     const warningDiv = document.createElement('div');
     warningDiv.classList.add('warningDiv')
+    warningDiv.style.display = 'flex'
     form.appendChild(warningDiv)
     const formWarning = document.createElement('p');
-    formWarning.textContent = 'hello';
-    warningDiv.appendChild(formWarning);
+formWarning.innerHTML = "<span class='form-line'>FORM IS INCOMPLETE.</span><span class='form-line'>Please make sure to fill in all fields correctly,</span><span class='form-line'>including a valid published year.</span>";
+formWarning.classList.add('formWarning');
+warningDiv.appendChild(formWarning);
+
     submitBook.addEventListener('mouseleave', function() {
       formWarning.textContent = '';
+      warningDiv.style.display = 'none'
+
     });
   }
 });
