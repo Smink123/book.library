@@ -5,6 +5,7 @@ const publishYear = document.getElementById("bookYear");
 const submitBook = document.getElementById("submitBook");
 const bookLogs = document.getElementById("bookLogs");
 const totalBooks = document.getElementById('totalBooks')
+const form = document.getElementById('form')
 
 const myLibrary = [];
 
@@ -19,22 +20,42 @@ function Book(bookTitle, author, totalPages, yearPublished, notRead) {
 submitBook.disabled = true;
 submitBook.style.cursor = 'not-allowed';
 
+const yearegEx = /^\d{4}$/;
+
 function validForms() {
-    if (
-      titleOfBook.value !== "" &&
-      authorOfBook.value !== "" &&
-      numberOfPages.value !== "" &&
-      publishYear.value !== ""
-    ) {
-      submitBook.disabled = false;
-      submitBook.style.cursor = 'pointer'
-    }
+  if (
+    titleOfBook.value !== "" &&
+    authorOfBook.value !== "" &&
+    numberOfPages.value !== "" &&
+    publishYear.value !== "" &&
+    yearegEx.test(publishYear.value)
+  ) {
+    submitBook.disabled = false;
+    submitBook.style.cursor = 'pointer';
+  } else {
+    submitBook.disabled = true;
+    submitBook.style.cursor = 'not-allowed';
   }
+}
 
 titleOfBook.addEventListener("input", validForms);
 authorOfBook.addEventListener("input", validForms);
 numberOfPages.addEventListener("input", validForms);
 publishYear.addEventListener("input", validForms);
+
+submitBook.addEventListener('mouseenter', function() {
+  if (submitBook.disabled) {
+    const warningDiv = document.createElement('div');
+    warningDiv.classList.add('warningDiv')
+    form.appendChild(warningDiv)
+    const formWarning = document.createElement('p');
+    formWarning.textContent = 'hello';
+    warningDiv.appendChild(formWarning);
+    submitBook.addEventListener('mouseleave', function() {
+      formWarning.textContent = '';
+    });
+  }
+});
 
 function displayBooks() {
     while (bookLogs.firstChild) {

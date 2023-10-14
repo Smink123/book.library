@@ -26,6 +26,12 @@ body {
     flex-direction: row;
     justify-content: center;
     width: 100%;
+    position: relative;
+}
+
+.warningDiv {
+    position: absolute;
+    right: 400px;
 }
 
 #submitContainer {
