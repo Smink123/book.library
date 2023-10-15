@@ -6,6 +6,7 @@ const submitBook = document.getElementById("submitBook");
 const bookLogs = document.getElementById("bookLogs");
 const totalBooks = document.getElementById('totalBooks')
 const form = document.getElementById('form')
+const bookDisplay = document.querySelectorAll('.bookDisplay')
 
 const myLibrary = [];
 
@@ -21,7 +22,7 @@ submitBook.disabled = true;
 submitBook.style.cursor = 'not-allowed';
 
 const yearegEx = /^\d{4}$/;
-const pagesRegEx = /^\d$/
+const pagesRegEx = /^\d+$/
 
 function validForms() {
   if (
@@ -106,47 +107,44 @@ function displayBooks() {
         displayBooks();
       });
   
-      const statusBox = document.createElement("div");
-      statusBox.classList.add('statusBox');
-      buttonSide.appendChild(statusBox);
-  
       const haveRead = document.createElement("button");
       haveRead.classList.add('statusButtons');
       haveRead.textContent = 'NOT READ';
-      statusBox.appendChild(haveRead);
+      buttonSide.appendChild(haveRead);
   
       const notRead = document.createElement("button");
       notRead.classList.add('statusButtons');
       notRead.textContent = 'HAVE READ';
-      statusBox.appendChild(notRead);
+      buttonSide.appendChild(notRead);
   
       if (book.notRead) { // the automatic state of the buttons/selection. haveRead starts off as 'true'
-        notRead.style.backgroundColor = 'black';
-        notRead.style.color = 'white';
-        haveRead.style.backgroundColor = 'white';
-        haveRead.style.color = 'black';
+        notRead.style.backgroundColor = '#2e2e2eff';
+        notRead.style.color = '#eae5d9';
+        haveRead.style.backgroundColor = 'transparent';
+        haveRead.style.color = '#2e2e2eff';
       } else {
-        haveRead.style.backgroundColor = 'black';
-        haveRead.style.color = 'white';
-        notRead.style.backgroundColor = 'white';
-        notRead.style.color = 'black';
+        haveRead.style.backgroundColor = '#2e2e2eff';
+        haveRead.style.color = '#eae5d9';
+        notRead.style.backgroundColor = 'transparent';
+        notRead.style.color = '#2e2e2eff';
       }
   
       haveRead.addEventListener('click', function() {
-        book.notRead = false; //change the state to it has been read
-        haveRead.style.backgroundColor = 'black';
-        haveRead.style.color = 'white';
-        notRead.style.backgroundColor = 'white';
-        notRead.style.color = 'black';
+        book.notRead = false;
+        haveRead.style.backgroundColor = '#2e2e2eff';
+        haveRead.style.color = '#eae5d9';
+        notRead.style.backgroundColor = 'transparent';
+        notRead.style.color = '#2e2e2eff';
       });
-  
+      
       notRead.addEventListener('click', function() {
         book.notRead = true;
-        notRead.style.backgroundColor = 'black';
-        notRead.style.color = 'white';
-        haveRead.style.backgroundColor = 'white';
-        haveRead.style.color = 'black';
+        notRead.style.backgroundColor = '#2e2e2eff';
+        notRead.style.color = '#eae5d9';
+        haveRead.style.backgroundColor = 'transparent';
+        haveRead.style.color = '#2e2e2eff';
       });
+      
     });
     totalBooks.textContent = `TOTAL BOOKS: ${myLibrary.length}`;
   }
@@ -163,6 +161,7 @@ submitBook.addEventListener("click", function () {
 
   displayBooks();
 
+
   titleOfBook.value = "";
   authorOfBook.value = "";
   numberOfPages.value = "";
@@ -170,3 +169,4 @@ submitBook.addEventListener("click", function () {
   submitBook.disabled = true;
   submitBook.style.cursor = 'not-allowed';
 });
+
